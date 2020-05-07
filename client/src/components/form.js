@@ -24,7 +24,8 @@ export default function Form (props){
             authors: book.authors
         }
 
-       Axios.post('/save', payload).then(reset())
+    //Axios.post('/save', payload).then(reset());
+       Axios.get(`https://www.googleapis.com/books/v1/volumes?q=${payload.title}+inauthor:${payload.authors}&key=AIzaSyA0TGXOQ5UoejVtruf8EpNjsRvNntXu8zM`).then((response)=>{console.log(response.data.items[0].volumeInfo)})
        
     }
 

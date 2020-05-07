@@ -36,7 +36,7 @@ app.post('/save', (req,res) => {
     .catch((err)=>{
         console.log('server error ' + err);
     })
-})
+});
 
 //Heroku setup
 if (process.env.NODE_ENV === 'production'){
