@@ -21,6 +21,7 @@ export default function GetBooks(){
     return (
         <div>
             <Form apiCall={loadBooks}/>
+            <h3>Your saved books list:</h3>
            {books.map((book, index)=> {
                return (
                 <div key={index}>
