@@ -7,6 +7,8 @@ export default function Form (props){
         authors: ""
     });
 
+    const [visibility, setVisibility] =useState("hidden");
+
     const [searchResults, setSearchResults] = useState({
         title: "",
         description: "",
@@ -44,8 +46,9 @@ export default function Form (props){
                 arr.push({title: i.volumeInfo.title, authors: i.volumeInfo.authors, description: i.volumeInfo.description, image: i.volumeInfo.imageLinks && i.volumeInfo.imageLinks.thumbnail});
            });
            setSearchResults({...searchResults, ...arr[0]});
+           setVisibility("visible");
         //console.log(response.data.items[0].volumeInfo);
-        }).then(reset());
+        }).catch((err)=>{console.log(err); setMsg("*Book not found")}).then(reset());
         // Axios.post('/save', searchResults).then(reset());
     }
 
@@ -83,7 +86,7 @@ export default function Form (props){
             <h5>{searchResults.title} {searchResults.authors[0]}</h5>
             <img src={searchResults.image}/>
             <h6>{searchResults.description}</h6>
-            <button onClick={() => {console.log(searchResults)}}>Save to your list</button>
+            <button style={{visibility: visibility}}onClick={() => {Axios.post('/save', searchResults).then(props.apiCall())}}>Save to your list</button>
         </div>
     )
 }
