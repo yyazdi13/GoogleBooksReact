@@ -16,6 +16,14 @@ export default function GetBooks(){
         }).catch(function(err){
             console.log("client error: " + err);
         })
+    };
+
+    function deleteBooks (id) {
+        Axios.delete('/book/' + id).then(function(response){
+            console.log(response);
+        }).then(loadBooks).catch(function(err){
+            console.log("client error: " + err);
+        })
     }
 
     return (
@@ -24,8 +32,8 @@ export default function GetBooks(){
             <h3>Your saved books list:</h3>
            {books.map((book, index)=> {
                return (
-                <div key={index}>
-               <p>{book.title} by {book.authors}</p>
+                <div key={index} id={book._id}>
+               <p>{book.title} by {book.authors} <button onClick={() => deleteBooks(book._id)}>delete</button></p> 
                </div>
                )
            })}

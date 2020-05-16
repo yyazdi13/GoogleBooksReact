@@ -39,6 +39,13 @@ app.post('/save', (req,res) => {
     })
 });
 
+app.delete('/book/:id', (req,res) => {
+    db.Book.findById({ _id: req.params.id })
+    .then(bookID => bookID.remove())
+    .then(bookID => res.json(bookID))
+    .catch(err => res.status(422).json(err));
+});
+
 //Heroku setup
 if (process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'));
