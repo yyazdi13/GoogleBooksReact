@@ -27,16 +27,25 @@ export default function GetBooks(){
     }
 
     return (
-        <div>
-            <Form apiCall={loadBooks}/>
-            <h3>Your saved books list:</h3>
+        <div className="row" style={{padding: "15px"}}>
+            <div className="col"><Form apiCall={loadBooks}/></div>
+            <div className="col">
+            <h3 style={{textAlign: "center", backgroundColor: "lightblue", margin: 0, borderRadius: "5px"}}>Your saved books list:</h3>
            {books.map((book, index)=> {
                return (
-                <div key={index} id={book._id}>
-               <p>{book.title} by {book.authors} <button onClick={() => deleteBooks(book._id)}>delete</button></p> 
-               </div>
+                <ul  className="list-group" key={index} id={book._id}>
+               <li className="list-group-item"> 
+                <button
+                style={{marginRight: "15px"}} 
+                className= "btn btn-danger btn-sm"
+                onClick={() => deleteBooks(book._id)}>delete</button>
+                {book.title} by {book.authors}
+                <img src={book.image} style={{width: "100px", float: "right"}}/>
+                </li> 
+               </ul>
                )
            })}
+           </div>
         </div>
     )
 }

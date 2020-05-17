@@ -42,7 +42,6 @@ export default function Form (props){
        .then((response)=>{
            var arr = [];
            response.data.items.map(i => {
-               console.log(i);
                 arr.push({title: i.volumeInfo.title, authors: i.volumeInfo.authors, description: i.volumeInfo.description, image: i.volumeInfo.imageLinks && i.volumeInfo.imageLinks.thumbnail});
            });
            setSearchResults({...searchResults, ...arr[0]});
@@ -53,40 +52,45 @@ export default function Form (props){
     }
 
     const reset  = () => {
+        props.apiCall();
         setBook({
             title: "",
             authors: ""
         })
-        props.apiCall();
     }
 
 
     return (
-        <div>
+        <div style={{background: "lightblue", border: "1px solid black", padding: "5px", width: "500px", boxShadow: " 1px 1px 1px black"}}>
+            <h3 style={{textAlign: "center", marginBottom: "15px"}}>Search</h3>
             <form onSubmit={submit}>
-            <div className="form-input">
+            <div className="form-group">
             <input
+            className="form-control"
             value={book.title}
             name="title"
             onChange={handleChange}
             placeholder="title"
             />
             </div>
-            <div className="form-input">
+            <div className="form-group">
             <input
+            className="form-control"
             value={book.authors}
             name="authors"
             placeholder="author(s)"
             onChange={handleChange}
             />
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
             </form>
             <h6 style={{color: "red", marginTop: "10px"}}>{msg}</h6>
             <h5>{searchResults.title} {searchResults.authors[0]}</h5>
             <img src={searchResults.image}/>
             <h6>{searchResults.description}</h6>
-            <button style={{visibility: visibility}}onClick={() => {Axios.post('/save', searchResults).then(reset())}}>Save to your list</button>
+            <button 
+            className= "btn btn-primary"
+            style={{visibility: visibility}}onClick={() => {Axios.post('/save', searchResults).then(reset())}}>Save to your list</button>
         </div>
     )
 }
