@@ -29,7 +29,7 @@ export default function GetBooks(){
     return (
         <div className="row" style={{padding: "15px"}}>
             <div className="col"><Form apiCall={loadBooks}/></div>
-            <div className="col">
+            <div className="col mt-5">
             <h3 style={{textAlign: "center", backgroundColor: "lightblue", margin: 0, borderRadius: "5px"}}>Your saved books list:</h3>
            {books.map((book, index)=> {
                return (
