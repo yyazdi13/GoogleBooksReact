@@ -1,17 +1,17 @@
 import React from 'react';
 import GetBooks from './components/getBooks';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 function App() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <span class="navbar-brand mr-5 mb-0 h1">Google Books Search</span>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav mr-auto">
-      <li className="nav-item active my-2 my-lg-0 text-primary">Search for a book and save it to your reading list!</li>
-      </ul>
-      </div>
-      </nav>
+      <Navbar bg="primary" variant="dark">
+    <Navbar.Brand href="#home">Google Books List</Navbar.Brand>
+    <Nav className="mr-auto">
+      <Nav.Link >Type in a title and an author to find your book!</Nav.Link>
+    </Nav>
+    </Navbar>
       <br></br>
       <GetBooks/>
     </div>
