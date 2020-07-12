@@ -61,7 +61,7 @@ export default function Form (props){
 
 
     return (
-        <div style={{background: "lightblue", border: "3px solid grey", marginTop: "45px", padding: "5px", width: "460px", boxShadow: " 1px 1px 1px black"}}>
+        <div style={{background: "lightblue", border: "3px solid grey", marginTop: "45px", padding: "5px", width: "460px", boxShadow: "1px gray"}}>
             <h3 style={{textAlign: "center", marginBottom: "15px"}}>Search</h3>
             <form onSubmit={submit}>
             <div className="form-group">
@@ -88,9 +88,10 @@ export default function Form (props){
             <h5>{searchResults.title} {searchResults.authors[0]}</h5>
             <img src={searchResults.image}/>
             <h6>{searchResults.description}</h6>
+            <br/>
             <button 
             className= "btn btn-primary"
-            style={{visibility: visibility}}onClick={() => {Axios.post('/save', searchResults).then(reset())}}>Save to your list</button>
+            style={{visibility: visibility, marginBottom: "10px"}}onClick={() => {Axios.post('/save', searchResults).then(reset())}}>Save to your list</button>
         </div>
     )
 }
