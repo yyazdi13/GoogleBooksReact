@@ -7,9 +7,9 @@ function App() {
   return (
     <div>
       <Navbar bg="primary" variant="dark">
-    <Navbar.Brand href="#home">Google Books List</Navbar.Brand>
+    <Navbar.Brand>Google Books List</Navbar.Brand>
     <Nav className="mr-auto">
-      <Nav.Link >Type in a title and an author to find your book!</Nav.Link>
+      <Nav.Link style={{color: "lightgrey"}}>Type in a title and an author to find your book!</Nav.Link>
     </Nav>
     </Navbar>
       <br></br>
