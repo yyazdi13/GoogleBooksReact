@@ -21,6 +21,7 @@ With this app, users can now explore google books to find a book that they like 
 ## Demo
 ![image](https://user-images.githubusercontent.com/54565666/82134899-55f83180-97c2-11ea-894a-28a38e7918a0.png)
 
-Read the descriptions, save your favorites:
+### Read the descriptions, save your favorites:
+
 ![image](https://user-images.githubusercontent.com/54565666/87239040-0acc5a80-c3d0-11ea-843c-4721eab29b79.png)
 
