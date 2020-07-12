@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import '../style.css';
 
 export default function Form (props){
     const [book, setBook] = useState({
@@ -61,8 +62,8 @@ export default function Form (props){
 
 
     return (
-        <div style={{background: "lightblue", border: "3px solid lightgrey", marginTop: "45px", padding: "5px", width: "460px", boxShadow: "1px gray"}}>
-            <h3 style={{textAlign: "center", marginBottom: "15px", color: "lightgrey", WebkitTextStrokeWidth: "1px", WebkitTextStrokeColor: "grey"}}>Search</h3>
+        <div className="formDiv">
+            <h3 className="search">Search</h3>
             <form onSubmit={submit}>
             <div className="form-group">
             <input

@@ -1,0 +1,27 @@
+.bookListTitle{
+    color: lightgray;
+    text-align: center;
+    background-color: lightblue; 
+    margin: 0;
+    border-radius: 5px; 
+    border: 3px solid lightgrey;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: gray;
+}
+
+.formDiv{
+    background: lightblue;
+    border: 3px solid lightgrey;
+    margin-top: 45px;
+    padding: 5px; 
+    width: 460px;
+    box-shadow: 1px gray;
+}
+
+.search{
+    text-align: center;
+    margin-bottom: "15px";
+    color: lightgrey;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: grey;
+}

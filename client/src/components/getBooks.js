@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import Form from './form';
+import '../style.css';
 
 export default function GetBooks(){
     const [books, setBooks] = useState([]);
@@ -30,7 +31,7 @@ export default function GetBooks(){
         <div className="row" style={{padding: "15px"}}>
             <div className="col"><Form apiCall={loadBooks}/></div>
             <div className="col mt-5">
-            <h3 style={{color: "lightgrey", textAlign: "center", backgroundColor: "lightblue", margin: 0, borderRadius: "5px", WebkitTextStrokeWidth: "1px", WebkitTextStrokeColor: "grey", border: "3px solid lightgrey"}}>Your saved books list:</h3>
+            <h3 className="bookListTitle">Your saved books list:</h3>
            {books.map((book, index)=> {
                return (
                 <ul  className="list-group" key={index} id={book._id}>
