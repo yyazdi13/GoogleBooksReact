@@ -25,3 +25,9 @@
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: grey;
 }
+
+@media only screen and (max-width:600px){
+    .formDiv{
+        width: 290px;
+    }
+}
