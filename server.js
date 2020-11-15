@@ -8,8 +8,11 @@ const db = require("./models");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// uri link
+const uri = "mongodb+srv://yasmin:@Helloworld13@cluster0.w1tvs.mongodb.net/googleBooks?retryWrites=true&w=majority";
+
 //Connect to mongoose database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googleBooks', {
+mongoose.connect(uri || 'mongodb://localhost/googleBooks', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
